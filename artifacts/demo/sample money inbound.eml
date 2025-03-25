@@ -1,0 +1,35 @@
+From: notifications@bankofamerica.com  
+To: customer@wellsfargo.com  
+Subject: Incoming Wire Transfer Notification  
+Date: Tue, 25 Mar 2025 10:30:00 -0700  
+MIME-Version: 1.0  
+Content-Type: multipart/mixed; boundary="boundary123"  
+
+--boundary123  
+Content-Type: text/plain; charset="UTF-8"  
+Content-Transfer-Encoding: 7bit  
+
+Dear Customer,  
+
+We are pleased to inform you that an incoming wire transfer has been received in your account.  
+
+**Details:**  
+- Amount: $10,000.00  
+- Sender: John Doe  
+- Sender Bank: Bank of America  
+- Transaction ID: 1234567890  
+- Expected Deposit Date: 03/25/2025  
+
+Attached is a confirmation of the transaction for your records.  
+
+Best Regards,  
+Bank of America Wire Transfer Team  
+
+--boundary123  
+Content-Type: application/pdf; name="Wire_Transfer_Confirmation.pdf"  
+Content-Disposition: attachment; filename="Wire_Transfer_Confirmation.pdf"  
+Content-Transfer-Encoding: base64  
+
+JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgL1R5cGUgL0NhdGFsb2c... (Base64 encoded PDF data)  
+
+--boundary123--
