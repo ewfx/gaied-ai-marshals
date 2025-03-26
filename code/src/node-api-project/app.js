@@ -45,19 +45,50 @@ app.get('/process-eml', async (req, res) => {
     console.log('Parsed EML Data:', emlData);
 
    
-    const messages = [
-        { role: 'system', content: 'You are an assistant that summarizes and analyzes emails.' },
-        { 
-          role: 'user', 
-          content: `I received the following email:\n\nSubject: ${emlData.subject}\nFrom: ${emlData.from}\nTo: ${emlData.to}\nDate: ${emlData.date}\n\nBody: ${emlData.text}\n\nCan you summarize the main points of this email?` 
-        }
+   const messages = [
+      {
+        role: "system",
+        content: "You are a capable assistant trained to extract key elements from an email body related to loan details and exactly match the context in provided request type and request sub type. The email body may include loan-related information such as the customer name, loan amount and other important loan terms. You should parse the email to identify and extract the following key details:" +
+             "1. *Request Type*: The request type from context. " +
+             "2. *Request Sub Type*: The request sub type from context. " +
+             "3. *Borrower Name*: The name of the borrower. " +
+             "4. *Loan Amount*: The total amount of the loan. " +
+             "Once these elements are extracted, provide the response in the following json format: " +
+             "{" +
+             "\"request_type\": \"<Request Type>\",\n" +
+             "\"request_sub_type\": \"<Request Sub Type>\",\n" +
+             "\"borrower_name\": \"<Borrower Name>\",\n" +
+             "\"loan_amount\": \"<Loan Amount>\"\n" +
+             "}" +
+             "These are request types and request sub types: " +
+             "{" +
+              "\"Adjustment\": \"\", " +
+              "\"AU Transfer\": \"\", " +
+              "\"Closing Notice\": \"Relocation Fees\", " +
+             "\"Closing Notice\": \"Amendment Fees\", " +
+             "\"Closing Notice\": \"Relocation Principal\", " +
+             "\"Commitment Change\": \"Cashless Roll\", " +
+             "\"Commitment Change\": \"Decrease\", " +
+             "\"Commitment Change\": \"Increase\", " +
+             "\"Fee Payment\": \"Ongoing Fee\", " +
+             "\"Fee Payment\": \"Letter of Credit Fee\", " +
+             "\"Money Movement - Inbound\": \"Principal\", " +
+             "\"Money Movement - Inbound\": \"Interest\", " +
+             "\"Money Movement - Inbound\": \"Principal + Interest\", " +
+             "\"Money Movement - Inbound\": \"Principal + Interest + Fee\", " +
+             "\"Money Movement - Outbound\": \"Timebound\", " +
+             "\"Money Movement - Outbound\": \"Foreign Currency\" " +
+              "}"
+     },
+   {
+        role: "user",
+        content: emlData.text,
+     }
       ];
-
-      console.log(process.env.OPENAI_API_KEY)
-  
+      
       // Send the parsed data to OpenAI using the Chat Completion API
       const completion = await client.chat.completions.create({
-        model: 'gpt-4o', // or 'gpt-3.5-turbo'
+          model: 'gpt-4o-mini', // or 'gpt-3.5-turbo'
         messages: messages
       });
   
