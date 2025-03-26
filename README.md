@@ -43,7 +43,7 @@ Describe the major technical or non-technical challenges your team encountered.
 2. Install dependencies  
    ```sh
    Go to https://github.com/ewfx/gaied-ai-marshals/tree/node_api/code/src/node-api-project path in cmd
-   npm install express mailparser openai dotenv
+   npm install
    ```
 3  Add .env file in root folder of node-api-project and add 
    OPENAI_API_KEY=KEY
