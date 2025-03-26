@@ -13,6 +13,9 @@
 ## 🎯 Introduction
 Multiple emails from customers/clients that are dealt with different teams based on the context. This solution should enable auto-classification of emails based on the context and categorize emails into predefined request  types and sub request types based on the sender's intent along with reasoning and respond with a Json
 
+## Architecture
+![image](https://github.com/user-attachments/assets/7dacc7d0-24cb-42db-9ab7-c3a3e745a32a)
+
 ## 🎥 Demo
 🖼️ Screenshots:
 ![image](https://github.com/user-attachments/assets/430ea771-509a-49da-8c19-da952d10d6ed)
