@@ -20,8 +20,8 @@ A brief overview of your project and its purpose. Mention which problem statemen
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
+![image](https://github.com/user-attachments/assets/430ea771-509a-49da-8c19-da952d10d6ed)
 
-![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
 What inspired you to create this project? Describe the problem you're solving.
@@ -42,18 +42,22 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   Go to https://github.com/ewfx/gaied-ai-marshals/tree/node_api/code/src/node-api-project path in cmd
+   npm install
    ```
-3. Run the project  
+3  Add .env file in root folder of node-api-project and add 
+   OPENAI_API_KEY=KEY
+4. Run the project  
    ```sh
-   npm start  # or python app.py
+   Go to https://github.com/ewfx/gaied-ai-marshals/tree/node_api/code/src/node-api-project path in cmd
+   npm app.js 
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: NA
+- 🔹 Backend: Node.js
+- 🔹 Database: NA
+- 🔹 Other: OpenAI API
 
 ## 👥 Team
 - **Your Name** - [GitHub](#) | [LinkedIn](#)
