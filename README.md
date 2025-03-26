@@ -14,7 +14,7 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+Multiple emails from customers/clients that are dealt with different teams based on the context. This solution should enable auto-classification of emails based on the context and categorize emails into predefined request  types and sub request types based on the sender's intent along with reasoning and respond with a Json
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -27,10 +27,14 @@ A brief overview of your project and its purpose. Mention which problem statemen
 What inspired you to create this project? Describe the problem you're solving.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+Our solution works as follows:​
+email Receiving: Reads emails send as input, the email is parsed and the content is extracted (including attachments!)​
+Large Language Model: The content is passed to our powerful Large Language Model, gpt-4o-mini which extracts the meaning, context and the sentiment from the email and determines the request type and sub request type based on prompt.​
+Summarization: The email is then summarized by a lighter model and responds in json format which can be integrated with any systems
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+It is built using LLM model, gpt-4o-mini 
+
 
 ## 🚧 Challenges We Faced
 Describe the major technical or non-technical challenges your team encountered.
