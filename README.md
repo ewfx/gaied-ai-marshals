@@ -42,18 +42,20 @@ Describe the major technical or non-technical challenges your team encountered.
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   Go to https://github.com/ewfx/gaied-ai-marshals/tree/node_api/code/src/node-api-project path in cmd
+   npm install express mailparser openai dotenv
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   Go to https://github.com/ewfx/gaied-ai-marshals/tree/node_api/code/src/node-api-project path in cmd
+   npm app.js  # or python app.py
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: NA
+- 🔹 Backend: Node.js
+- 🔹 Database: NA
+- 🔹 Other: OpenAI API
 
 ## 👥 Team
 - **Your Name** - [GitHub](#) | [LinkedIn](#)
