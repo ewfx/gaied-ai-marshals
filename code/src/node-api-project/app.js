@@ -15,15 +15,9 @@ const openaiApiKey = "";
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY, // Load OpenAI API key from .env file
   });
-  
-
-// API endpoint to process the .eml file
-app.get('/hello', async (req, res) => {
-    res.json({ message: `Hello !` });
-});
 
 app.get('/process-eml', async (req, res) => {
-  const emlFilePath = 'C:\\Users\\Administrator\\Desktop\\HACK\\gaied-ai-marshals\\artifacts\\demo\\Interest_Rate_Notice.eml'; // Change this to the path of your local .eml file
+  const emlFilePath = 'C:\\Users\\Administrator\\Desktop\\HACK\\gaied-ai-marshals\\artifacts\\demo\\sample_money_inbound.eml'; // Change this to the path of your local .eml file
 
   try {
     // Read the .eml file from the local path
@@ -42,10 +36,10 @@ app.get('/process-eml', async (req, res) => {
       html: parsed.html,
     };
 
-    console.log('Parsed EML Data:', emlData);
+console.log('Parsed EML Data:', emlData);
 
    
-   const messages = [
+const messages = [
       {
         role: "system",
         content: "You are a capable assistant trained to extract key elements from an email body related to loan details and exactly match the context in provided request type and request sub type. The email body may include loan-related information such as the customer name, loan amount and other important loan terms. You should parse the email to identify and extract the following key details:" +
@@ -53,7 +47,7 @@ app.get('/process-eml', async (req, res) => {
              "2. *Request Sub Type*: The request sub type from context. " +
              "3. *Borrower Name*: The name of the borrower. " +
              "4. *Loan Amount*: The total amount of the loan. " +
-             "Once these elements are extracted, provide the response in the following json format: " +
+             "Once these elements are extracted, provide the response in the following format: " +
              "{" +
              "\"request_type\": \"<Request Type>\",\n" +
              "\"request_sub_type\": \"<Request Sub Type>\",\n" +
@@ -94,11 +88,16 @@ app.get('/process-eml', async (req, res) => {
   
       // Get the response from OpenAI
       const openAiResponse = completion.choices[0].message.content.trim();
-  
+      
       // Send the response back to the client
+      const cleanString = openAiResponse.replace(/^```json\n/, '').replace(/\n```$/, '');
+
+      // Step 2: Parse the cleaned string into a JSON object
+      const jsonObject = JSON.parse(cleanString);
+
       res.status(200).json({
         message: 'EML file processed and response from OpenAI received.',
-        openAiResponse: openAiResponse,
+        openAiResponse: jsonObject,
       });
      
   } catch (error) {
