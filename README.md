@@ -20,8 +20,8 @@ A brief overview of your project and its purpose. Mention which problem statemen
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
+![image](https://github.com/user-attachments/assets/430ea771-509a-49da-8c19-da952d10d6ed)
 
-![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
 What inspired you to create this project? Describe the problem you're solving.
