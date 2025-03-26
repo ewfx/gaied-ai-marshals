@@ -17,8 +17,7 @@ const client = new OpenAI({
   });
 
 app.get('/process-eml', async (req, res) => {
-  const emlFilePath = 'C:\\Users\\Administrator\\Desktop\\HACK\\gaied-ai-marshals\\artifacts\\demo\\sample_money_inbound.eml'; // Change this to the path of your local .eml file
-
+ const emlFilePath =  process.env.FILE_PATH; 
   try {
     // Read the .eml file from the local path
     const emlFile = fs.createReadStream(emlFilePath);
