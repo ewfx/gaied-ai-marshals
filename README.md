@@ -19,10 +19,10 @@ Multiple emails from customers/clients that are dealt with different teams based
 
 ## ⚙️ What It Does
 Our solution works as follows:
-Email Receiving: Reads emails send as input, the email is parsed and the content is extracted
-Custom prompt with augmented cache: Creating a custom prompt with providing request types information to match context and the expected json response. Also instructing to extract key elements from email content and add to response.
-Large Language Model: The content is passed to our powerful Large Language Model, gpt-4o-mini which extracts the meaning, context and the sentiment from the email and determines the request type and sub request type based on prompt.
-Summarization: The email is then summarized by a lighter model and responds in json format which can be integrated with any systems
+ - Email Receiving: Reads emails send as input, the email is parsed and the content is extracted
+ - Custom prompt with augmented cache: Creating a custom prompt with providing request types information to match context and the expected json response. Also instructing to extract key elements from email content and add to response.
+ - Large Language Model: The content is passed to our powerful Large Language Model, gpt-4o-mini which extracts the meaning, context and the sentiment from the email and determines the request type and sub request type based on prompt.
+ - Summarization: The email is then summarized by a lighter model and responds in json format which can be integrated with any systems
 
 ## 🛠️ How We Built It
 It is built using LLM model, gpt-4o-mini 
